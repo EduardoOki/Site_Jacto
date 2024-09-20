@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main class='login__container'>
+  <div class='login__content'>
+    <h2 class='login__title'>AGRO MARKETPLACE</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div>
+        <div class="login__connection">
+          <label for="id_username" class="input__title">Usuário</label>
+          <input class="input__border" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150"
+            required="" id="id_username">
+        </div>
+        <div class="login__connection">
+          <label for="id_password" class="input__title">Senha</label>
+          <input class="input__border" type="password" name="password" autocomplete="current-password" required="" id="id_password">
+        </div>
+      </div>
+      <div class='log-sgn__btns'>
+        <a href="{% url 'signup' %}" class="login__button" id="sign_btn">CRIAR CONTA</a>
+        <button class="login__button" id="login_btn" type="submit">ENTRAR</button>
+      </div>
+  
+    </form>
+  </div>
+</main>
+
+{% endblock %}
